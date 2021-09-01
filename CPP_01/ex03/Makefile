@@ -15,7 +15,7 @@ NAME = UNNECESSARY_VIOLENCE
 COMPILER = clang++
 WFLAG = -Wall -Werror -Wextra
 
-SRC =	main.cpp HumanA.cpp Weapon.cpp
+SRC =	*.cpp
 
 OBJ = $(SRC:.cpp=.o)
 

@@ -18,10 +18,10 @@ std::string&    Weapon::get_type(){
     return(ref);
 };
 
-void           Weapon::set_type(std::string new_type){
+void           Weapon::setType(std::string new_type){
     this->_type = new_type;
 };
 
 Weapon::Weapon(std::string type){
-    set_type(type);
+    setType(type);
 };
