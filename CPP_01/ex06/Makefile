@@ -5,12 +5,13 @@
 #                                                     +:+ +:+         +:+      #
 #    By: gscala <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/09/03 15:49:53 by gscala            #+#    #+#              #
-#    Updated: 2021/09/03 15:49:54 by gscala           ###   ########.fr        #
+#    Created: 2021/09/04 14:59:00 by gscala            #+#    #+#              #
+#    Updated: 2021/09/04 14:59:02 by gscala           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = KAREN
+
+NAME = KAREN-filter
 
 COMPILER = clang++
 WFLAG = -Wall -Werror -Wextra
