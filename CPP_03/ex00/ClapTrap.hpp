@@ -1,32 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gscala <gscala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/30 11:23:17 by gscala            #+#    #+#             */
-/*   Updated: 2021/09/08 16:18:21 by gscala           ###   ########.fr       */
+/*   Created: 2021/09/07 17:29:54 by gscala            #+#    #+#             */
+/*   Updated: 2021/09/08 16:08:41 by gscala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-#define ZOMBIE_HPP
+#ifndef CLAPTRAP_HPP
+#define CLAPTRAP_HPP
 
-#include <string>
 #include <iostream>
+#include <fstream>
 
-class Zombie{
+class ClapTrap{
 private:
-    std::string name;
+    std::string _name;
+    int _hitpoints;
+    int _energy_points;
+    int _attack_damage;
 public:
-    void    set_name(std::string new_name);
-    void    announce(void);
-    ~Zombie();
+    ClapTrap(std::string name);
+    ~ClapTrap();
+    std::string & getname(void);
+    void attack(std::string const & target);
+    void takeDamage(unsigned int amount);
+    void beRepaired(unsigned int amount);
 };
-
-Zombie* newZombie(std::string name);
-void    randomChump(std::string name);
-
 
 #endif
