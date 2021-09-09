@@ -3,6 +3,8 @@
 
 int main(void)
 {
-    ScavTrap scav("ostia");
-    scav.attack("paoletto");
+    ScavTrap scav("Ostia");
+    scav.attack("Paoletto");
+    scav.takeDamage(5);
+    scav.guardGate();
 }

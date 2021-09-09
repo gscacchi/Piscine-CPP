@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gscala <gscala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/07 17:29:43 by gscala            #+#    #+#             */
-/*   Updated: 2021/09/09 16:09:47 by gscala           ###   ########.fr       */
+/*   Created: 2021/09/09 17:53:56 by gscala            #+#    #+#             */
+/*   Updated: 2021/09/09 17:54:00 by gscala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ ClapTrap::ClapTrap(std::string name){
 };
 
 ClapTrap::~ClapTrap(){
-	std::cout << "Clap Trap " << _name << " has been destroyed " << std::endl;
+	std::cout << _name << " has been destroyed " << std::endl;
 }
 
 std::string & ClapTrap::getname(void){
@@ -47,4 +47,3 @@ void ClapTrap::beRepaired(unsigned int amount){
 	_energy_points += amount;
 	std::cout << _name << " now has " << _energy_points << " energy points left " << std::endl;
 };
-
