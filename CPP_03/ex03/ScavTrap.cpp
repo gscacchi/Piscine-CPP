@@ -1,5 +1,9 @@
 #include "ScavTrap.hpp"
 
+ScavTrap::ScavTrap(){
+
+};
+
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name) //prende anche il costruttore della classe madre
 {
     std::cout << "Scav Trap " << name <<  " initialized" << std::endl;
@@ -22,4 +26,12 @@ ScavTrap::~ScavTrap(){
 
 void    ScavTrap::guardGate(){
     std::cout << "Scav Trap " << _name << " has entered in Gate keeper mode" << std::endl;
+}
+
+int     ScavTrap::get_energypoints(void){
+    return(_energy_points);
+}
+
+void    ScavTrap::set_energypoints(int n){
+    _energy_points = n;
 }

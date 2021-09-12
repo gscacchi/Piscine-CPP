@@ -6,11 +6,11 @@
 #    By: gscala <gscala@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/09 15:49:45 by gscala            #+#    #+#              #
-#    Updated: 2021/09/09 16:49:24 by gscala           ###   ########.fr        #
+#    Updated: 2021/09/12 09:49:26 by gscala           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = FRAGTRAP
+NAME = DIAMONDTRAP
 
 COMPILER = clang++
 WFLAG = -Wall -Werror -Wextra
