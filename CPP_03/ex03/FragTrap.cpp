@@ -6,7 +6,7 @@
 /*   By: gscala <gscala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/09 15:49:36 by gscala            #+#    #+#             */
-/*   Updated: 2021/09/12 09:52:23 by gscala           ###   ########.fr       */
+/*   Updated: 2021/09/14 16:32:39 by gscala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ FragTrap::FragTrap(){
 FragTrap::FragTrap(std::string name) : ClapTrap(name){
     _name = name;
     std::cout << "Frag Trap " << _name << " has been created " << std::endl;
-    _hitpoints = 100;
-    _energy_points = 100;
-    _attack_damage = 30;
+    set_hitpoints(100);
+    set_energy_points(100);
+    this->_attack_damage = 30;
 }
 
 FragTrap::~FragTrap(){
@@ -35,13 +35,4 @@ void    FragTrap::highFivesGuys(void){
 void FragTrap::attack(std::string const & target){
     std::cout << "Frag Trap " << _name << " attacks " << target << std::endl;
     _energy_points -= 1;
-    std::cout << "Now " << _name << " has " << _energy_points << " energy points left" << std::endl;
-}
-
-int FragTrap::get_hitpoints(void){
-    return(this->_hitpoints);
-}
-
-void FragTrap::set_hitpoints(int n){
-    this->_hitpoints = n;
 }

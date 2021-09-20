@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   phonebook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gscala <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: gscala <gscala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/21 14:10:04 by gscala            #+#    #+#             */
-/*   Updated: 2021/08/21 14:10:07 by gscala           ###   ########.fr       */
+/*   Updated: 2021/09/14 16:15:11 by gscala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,10 +113,20 @@ contact    ft_add_contact(contact contact)
     return(contact);
 }
 
+void    ft_show_all(contact contact[], int num){
+    std::cout << "INDEX: " << num << std::endl;
+    std::cout << "FIRST NAME: " << contact[num].get_first_name() << std::endl;
+    std::cout << "LAST NAME: " << contact[num].get_last_name() << std::endl;
+    std::cout << "NICKNAME: " << contact[num].get_nickname() << std::endl;
+    std::cout << "PHONE NUMBER: " << contact[num].get_phone_number() << std::endl;
+    std::cout << "DARKEST SECRET: " <<contact[num].get_darkest_secret() << std::endl;
+ }
+
 void    ft_search_contact(contact contact[], int i)
 {
     int k = 0;
     std::string string;
+    int num;
 
     std::cout << "INDEX";
     std::cout << " | ";
@@ -142,6 +152,15 @@ void    ft_search_contact(contact contact[], int i)
         std::cout << "\n";
         k++;
     }
+    std::cout << "Insert desired index" << std::endl;
+    std::cin >> num;
+    if (num >= 0 && num < i)
+    {
+        ft_show_all(contact, num);
+    }
+    else
+        std::cout << "Wrong Input " << std::endl;
+    
 }
 
 int     main(void)
@@ -149,7 +168,6 @@ int     main(void)
     contact contact[8];
     int i;
     std::string input;
-    int test;
 
     i = 0;
     while (1)

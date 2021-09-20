@@ -7,10 +7,10 @@ ScavTrap::ScavTrap(){
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name) //prende anche il costruttore della classe madre
 {
     std::cout << "Scav Trap " << name <<  " initialized" << std::endl;
-    _name = name;
-    _hitpoints = 100;
-    _energy_points = 50;
-    _attack_damage = 20;
+    this->_name = name;
+    set_hitpoints(100);
+    set_energy_points(50);
+    this->_attack_damage = 20;
 };
 
 
@@ -21,17 +21,9 @@ void ScavTrap::attack(std::string const & target){
 }
 
 ScavTrap::~ScavTrap(){
-    std::cout << "Scav Trap " << _name << " is being destroyed " << std::endl;
+    std::cout << "Scav Trap " << _name << " has been destroyed " << std::endl;
 }
 
 void    ScavTrap::guardGate(){
     std::cout << "Scav Trap " << _name << " has entered in Gate keeper mode" << std::endl;
-}
-
-int     ScavTrap::get_energypoints(void){
-    return(_energy_points);
-}
-
-void    ScavTrap::set_energypoints(int n){
-    _energy_points = n;
 }

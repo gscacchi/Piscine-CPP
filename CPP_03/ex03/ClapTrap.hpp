@@ -6,7 +6,7 @@
 /*   By: gscala <gscala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/09 15:49:33 by gscala            #+#    #+#             */
-/*   Updated: 2021/09/09 15:50:26 by gscala           ###   ########.fr       */
+/*   Updated: 2021/09/13 16:02:56 by gscala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,11 @@ public:
     void attack(std::string const & target);
     void takeDamage(unsigned int amount);
     void beRepaired(unsigned int amount);
+
+    void set_energy_points(int n);
+    int  get_energy_points();
+    void set_hitpoints(int n);
+    int  get_hitpoints(void);
 };
 
 #endif

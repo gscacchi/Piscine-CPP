@@ -1,27 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gscala <gscala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/09 15:49:39 by gscala            #+#    #+#             */
-/*   Updated: 2021/09/13 16:03:23 by gscala           ###   ########.fr       */
+/*   Created: 2021/09/20 15:29:50 by gscala            #+#    #+#             */
+/*   Updated: 2021/09/20 16:00:48 by gscala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_HPP
-#define FRAGTRAP_HPP
+#ifndef ANIMAL_HPP
+# define ANIMAL_HPP
 
-#include "ClapTrap.hpp"
+#include <iostream>
+#include <string>
 
-class FragTrap:virtual public ClapTrap{
-    public:
-        FragTrap();
-        FragTrap(std::string name);
-        ~FragTrap();
-        void attack(std::string const & target);
-        void highFivesGuys(void);
+class Animal
+{
+protected:
+	std::string	type;
+public:
+	Animal();
+	Animal(Animal & src);
+	virtual ~Animal();
+
+	virtual void	makeSound() const = 0;
+
+	Animal & operator=(Animal const & rhs);
+
+	std::string	getType() const;
 };
 
 #endif

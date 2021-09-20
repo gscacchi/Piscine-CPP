@@ -6,7 +6,7 @@
 /*   By: gscala <gscala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/09 17:53:56 by gscala            #+#    #+#             */
-/*   Updated: 2021/09/09 17:54:00 by gscala           ###   ########.fr       */
+/*   Updated: 2021/09/13 16:06:44 by gscala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,3 +47,19 @@ void ClapTrap::beRepaired(unsigned int amount){
 	_energy_points += amount;
 	std::cout << _name << " now has " << _energy_points << " energy points left " << std::endl;
 };
+
+void ClapTrap::set_energy_points(int n){
+	this->_energy_points = n;
+};
+
+int ClapTrap::get_energy_points(void){
+	return(this->_energy_points);
+}
+
+void ClapTrap::set_hitpoints(int n){
+	this->_hitpoints = n;
+}
+
+int ClapTrap::get_hitpoints(void){
+	return(this->_hitpoints);
+}

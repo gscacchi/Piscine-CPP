@@ -6,23 +6,28 @@
 /*   By: gscala <gscala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/12 09:48:02 by gscala            #+#    #+#             */
-/*   Updated: 2021/09/12 11:58:37 by gscala           ###   ########.fr       */
+/*   Updated: 2021/09/13 17:26:27 by gscala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 #include "DiamondTrap.hpp"
 
+DiamondTrap::DiamondTrap() : ScavTrap(), FragTrap(){
 
-DiamondTrap::DiamondTrap(std::string name) : ScavTrap(name), FragTrap(name){
+};
+
+DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name), ScavTrap(name), FragTrap(name){
     std::cout << "Parametric Diamond Constructor called" << std::endl;
     _name = name;
     ClapTrap::_name = name + "_clap_name";
     set_hitpoints(FragTrap::get_hitpoints());
-    _energy_points = ClapTrap::_energy_points;
+    set_energy_points(ScavTrap::get_energy_points());
+    //std::cout << ScavTrap::get_energy_points();
+    //_energy_points = ClapTrap::_energy_points;
     //FOR SOME REASON ENERGY POINTS ARE ALWAYS 100 !!!!!!
-    std::cout << "HITPOINTSS == " << _hitpoints << std::endl;
-    std::cout << "ENERGYPOINTSS == " << _energy_points << std::endl;
+    //std::cout << "HITPOINTSS == " << _hitpoints << std::endl;
+    //std::cout << "ENERGYPOINTSS == " << _energy_points << std::endl;
 };
 
 DiamondTrap::~DiamondTrap(){

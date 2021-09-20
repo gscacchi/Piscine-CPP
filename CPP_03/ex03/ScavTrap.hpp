@@ -10,9 +10,6 @@ class ScavTrap:virtual public ClapTrap{
         ~ScavTrap();
         void attack(std::string const & target);
         void guardGate();
-
-        int get_energypoints(void);
-        void set_energypoints(int n);
 };
 
 

@@ -1,27 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gscala <gscala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/09 15:49:39 by gscala            #+#    #+#             */
-/*   Updated: 2021/09/13 16:03:23 by gscala           ###   ########.fr       */
+/*   Created: 2021/09/20 15:30:21 by gscala            #+#    #+#             */
+/*   Updated: 2021/09/20 15:30:24 by gscala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_HPP
-#define FRAGTRAP_HPP
+#ifndef CAT_HPP
+# define CAT_HPP
 
-#include "ClapTrap.hpp"
+#include "Animal.hpp"
+#include "Brain.hpp"
 
-class FragTrap:virtual public ClapTrap{
-    public:
-        FragTrap();
-        FragTrap(std::string name);
-        ~FragTrap();
-        void attack(std::string const & target);
-        void highFivesGuys(void);
+class Cat : public Animal
+{
+private:
+	Brain* brain;
+public:
+	Cat();
+	Cat(Cat & src);
+	virtual ~Cat();
+
+	virtual void	makeSound() const ;
+
+	Cat & operator=(Cat const & rhs);
+
+	void setIdea(int index, std::string idea);
+	std::string	getIdea(int index) const;
 };
 
 #endif
