@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gscala <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: gscala <gscala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/06 11:43:28 by gscala            #+#    #+#             */
-/*   Updated: 2021/09/06 11:43:29 by gscala           ###   ########.fr       */
+/*   Updated: 2021/09/21 11:26:28 by gscala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ Fixed::Fixed(Fixed const & src){
 	std::cout << "Copy constructor called" << std::endl;
 	*this = src;
  }
-
 
 Fixed & Fixed::operator=(Fixed const & copy){
 
