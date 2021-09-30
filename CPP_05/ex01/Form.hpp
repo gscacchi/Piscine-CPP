@@ -1,31 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
+/*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gscala <gscala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/22 14:58:09 by gscala            #+#    #+#             */
-/*   Updated: 2021/09/30 14:03:13 by gscala           ###   ########.fr       */
+/*   Created: 2021/09/30 14:13:02 by gscala            #+#    #+#             */
+/*   Updated: 2021/09/30 18:15:11 by gscala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BUREAUCRAT_HPP
-#define BUREAUCRAT_HPP
+#ifndef FORM_HPP
+#define FORM_HPP
+#include "Bureaucrat.hpp"
 
-#include <iostream>
-#include <stdexcept>
+
 #include <string>
+#include <iostream>
 
-class Bureaucrat{
+class Form{
     private:
         const std::string _name;
-        unsigned int _grade;
+        bool     _sign;
+        const unsigned int _grade_sign;
+        const unsigned int _grade_exec;
     public:
-        Bureaucrat(std::string name, unsigned int grade);
-        ~Bureaucrat();
-        std::string    getName() const;
-        unsigned int    getGrade() const;
+        Form(std::string name, unsigned int grade_sign, unsigned int grade_exec);
+        ~Form();
+        void beSigned(Bureaucrat & bur);
         class GradeTooHighException : public std::exception
         {
             public:
@@ -37,11 +39,13 @@ class Bureaucrat{
             public:
                 virtual const char * what() const throw();
         };
-        void incrementGrade();
-        void decrementGrade();
+        std::string getName(void);
+        unsigned int getSign();
+        unsigned int getGradeSign();
+        unsigned int getGradeExec();
+        
 };
 
-std::ostream & operator<<(std::ostream &os, const Bureaucrat &bureaucrat);
-
+std::ostream & operator<<(std::ostream &os, const Form &form);
 
 #endif

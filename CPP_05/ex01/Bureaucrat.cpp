@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: gscala <gscala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/22 15:03:29 by gscala            #+#    #+#             */
-/*   Updated: 2021/09/30 14:03:17 by gscala           ###   ########.fr       */
+/*   Created: 2021/09/30 15:46:58 by gscala            #+#    #+#             */
+/*   Updated: 2021/09/30 15:46:59 by gscala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,5 +58,4 @@ std::ostream & operator<<(std::ostream &os, const Bureaucrat &bureaucrat) {
 	os << "The Bureaucrat " << bureaucrat.getName() << " has a grade of " << bureaucrat.getGrade() << std::endl;
 	return os;
 }
-
 
