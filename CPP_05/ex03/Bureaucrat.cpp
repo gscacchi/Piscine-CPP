@@ -6,7 +6,7 @@
 /*   By: gscala <gscala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/30 15:46:58 by gscala            #+#    #+#             */
-/*   Updated: 2021/10/01 11:56:08 by gscala           ###   ########.fr       */
+/*   Updated: 2021/10/06 15:46:37 by gscala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,15 @@ void Bureaucrat::signForm(Form &form){
         std::cout << this->_name << " signs " << form.getName() << std::endl;
     else
         std::cout << this->_name << " cannot sign form because grade is too low" << std::endl;
+}
+
+void Bureaucrat::executeForm(Form const & form){
+    if (this->_grade <= form.getGradeExec()){
+        std::cout << "Bureaucrat executes form\n";
+        form.execute(*this);}
+    else{
+        std::cout << "exception has occurred\n";
+        throw Form::GradeTooLowException();}
 }
 
 std::ostream & operator<<(std::ostream &os, const Bureaucrat &bureaucrat) {

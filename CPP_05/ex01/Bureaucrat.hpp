@@ -6,7 +6,7 @@
 /*   By: gscala <gscala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/30 15:46:47 by gscala            #+#    #+#             */
-/*   Updated: 2021/09/30 15:46:48 by gscala           ###   ########.fr       */
+/*   Updated: 2021/10/01 11:47:00 by gscala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <iostream>
 #include <stdexcept>
 #include <string>
+class Form;
 
 class Bureaucrat{
     private:
@@ -39,6 +40,7 @@ class Bureaucrat{
         };
         void incrementGrade();
         void decrementGrade();
+        void signForm(Form &form);
 };
 
 std::ostream & operator<<(std::ostream &os, const Bureaucrat &bureaucrat);

@@ -6,37 +6,49 @@
 /*   By: gscala <gscala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/30 16:13:09 by gscala            #+#    #+#             */
-/*   Updated: 2021/10/01 11:57:05 by gscala           ###   ########.fr       */
+/*   Updated: 2021/10/06 15:55:27 by gscala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
 int main(void){
-    Form test("test", 10, 20);
-    Bureaucrat bur("Gigi", 11);
+    Bureaucrat bur("Burocrate", 40);
+    Form *shrub = new ShrubberyCreationForm("shrub1");
 
-    std::cout << "TEST WITH OVERLOAD BEFORE SIGNING " << std::endl;
-    std::cout << test;
-
-    std::cout << "TRYING TO SIGN FORM" << std::endl;
+    std::cout << "ATTEMPT TO SIGN AND EXECUTE A SHRUBBERY\n";
     try{
-        test.beSigned(bur);
-    }
+    shrub->beSigned(bur);}
     catch(std::exception &e){
         std::cout << e.what() << std::endl;
     }
-    bur.incrementGrade();
-     try{
-        test.beSigned(bur);
-    }
+    try{
+        shrub->execute(bur);}
     catch(std::exception &e){
         std::cout << e.what() << std::endl;
     }
-    //bur.decrementGrade();
-    std::cout << "SIGN FORM TEST: " << std::endl;
-    bur.signForm(test);
-    std::cout << "TEST WITH OVERLOAD AFTER SIGNING " << std::endl;
-    std::cout << test;
+    std::cout << "ATTEMPT TO SIGN AND EXECUTE A ROBOTOMY REQUEST\n";
+   Form *rob = new RobotomyRequestForm("robreq1");
+   try{
+        rob->beSigned(bur);
+        rob->execute(bur);}
+    catch(std::exception &e){
+        std::cout << e.what() << std::endl;
+    }
+    std::cout << "ATTEMPT TO SIGN AND EXECUTE A PARDON REQUEST\n";
+   Form *pardon = new PresidentialPardonForm("Piergiorgio");
+   try{
+       pardon->beSigned(bur);
+       pardon->execute(bur);
+   }
+   catch(std::exception &e){
+        std::cout << e.what() << std::endl;
+    }
+    delete shrub;
+    delete rob;
+    delete pardon;
 }

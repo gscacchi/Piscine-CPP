@@ -1,35 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.hpp                                           :+:      :+:    :+:   */
+/*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gscala <gscala@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/30 14:13:02 by gscala            #+#    #+#             */
-/*   Updated: 2021/10/01 11:50:32 by gscala           ###   ########.fr       */
+/*   Created: 2021/09/30 15:46:47 by gscala            #+#    #+#             */
+/*   Updated: 2021/10/06 15:43:24 by gscala           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FORM_HPP
-#define FORM_HPP
-#include "Bureaucrat.hpp"
+#ifndef BUREAUCRAT_HPP
+#define BUREAUCRAT_HPP
 
-
-#include <string>
 #include <iostream>
+#include <stdexcept>
+#include <string>
+class Form;
 
-class Bureaucrat;
-
-class Form{
+class Bureaucrat{
     private:
         const std::string _name;
-        bool     _sign;
-        const unsigned int _grade_sign;
-        const unsigned int _grade_exec;
+        unsigned int _grade;
     public:
-        Form(std::string name, unsigned int grade_sign, unsigned int grade_exec);
-        ~Form();
-        void beSigned(Bureaucrat & bur);
+        Bureaucrat(std::string name, unsigned int grade);
+        ~Bureaucrat();
+        std::string    getName() const;
+        unsigned int    getGrade() const;
         class GradeTooHighException : public std::exception
         {
             public:
@@ -41,13 +38,13 @@ class Form{
             public:
                 virtual const char * what() const throw();
         };
-        std::string getName(void);
-        bool getSign();
-        unsigned int getGradeSign();
-        unsigned int getGradeExec();
-        
+        void incrementGrade();
+        void decrementGrade();
+        void signForm(Form &form);
+        void executeForm(Form const & form);
 };
 
-std::ostream & operator<<(std::ostream &os, Form &form);
+std::ostream & operator<<(std::ostream &os, const Bureaucrat &bureaucrat);
+
 
 #endif
