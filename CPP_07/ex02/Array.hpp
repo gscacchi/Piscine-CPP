@@ -12,8 +12,11 @@ class Array{
         T* array;
         unsigned int length;
     public:
+        ~Array(){
+            delete(array);
+        };
         //construction with no parameters
-        unsigned int getLength(void)
+        unsigned int size(void)
         {
             return (length);
         }
@@ -34,7 +37,6 @@ class Array{
                 array[i] = arr[i];
             return(*this);
         }
-
         Array(Array &arr)
 	    {
 		    T *tempCopy;
@@ -44,6 +46,22 @@ class Array{
 		    length = arr.length;
 		    this->array = tempCopy;
 	    };
+        T & operator[](unsigned int index)
+        {
+            if (index > length || index < 0)
+            {
+                throw exception();
+            }
+            else
+                return array[index];
+            
+        };
+        class exception : public std::exception
+        {
+                virtual const char * what() const throw() {
+                    return("Element out of limits");
+                }
+        };
 
         
 };
