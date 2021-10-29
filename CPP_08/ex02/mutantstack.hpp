@@ -6,16 +6,24 @@
 #include <string>
 #include <math.h>
 #include <exception>
+#include <stack>
 
 template <typename T>
 class MutantStack : public std::stack<T>{
     public:
         MutantStack(): std::stack<T>(){};
-        ~MutantStack();
-        MutantStack& operator=( const MutantStack& other); //replaces the contents of the container adaptor with those of other
-        unsigned int begin(void);
-        unsigned int end(void);
-};
+        ~MutantStack(){};
+        MutantStack(const MutantStack &stack){
+		    *this = stack;	
+	    };
 
+	    MutantStack &operator=(const MutantStack &stack){
+		    std::stack<T>::operator=(stack);
+		    return *this;
+	    };
+        typedef typename std::deque<T>::iterator iterator;
+        iterator begin(void){return(this->c.begin());};
+        iterator end(void){return(this->c.end());};
+};
 
 #endif
